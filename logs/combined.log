@@ -1,0 +1,187 @@
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T13:35:17.328Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T13:36:53.794Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T13:59:55.159Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T13:59:55.433Z","userId":"694408dbdc77a7df1642f569"}
+{"email":"snowsparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T14:03:26.579Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T14:05:21.275Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T14:05:21.485Z","userId":"69440a219d88dfd6ca09ded8"}
+{"email":"snowsparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T14:35:30.404Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T14:35:47.670Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T14:35:47.938Z","userId":"694411439b44c2d2b5f30cce"}
+{"email":"snowsparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:26:09.545Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:26:32.676Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T15:26:33.013Z","userId":"69441d28102576bbc71128ea"}
+{"email":"snowsparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:30:00.285Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:30:14.621Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T15:30:14.819Z","userId":"69441e062cf1c8bafa7aefa3"}
+{"email":"snowsparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:35:34.591Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:35:54.627Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T15:35:54.958Z","userId":"69441f5aee7039e0f83e5599"}
+{"email":"snowsparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:41:39.248Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:41:51.914Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T15:41:52.240Z","userId":"694420c09374a1c1329b54f3"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T15:41:52.496Z","userId":"694420c09374a1c1329b54f3"}
+{"email":"CM4bD3","error":"No recipients defined","level":"error","message":"Failed to send verification email","timestamp":"2025-12-18T15:41:53.821Z"}
+{"email":"snowsparrow5566@gmail.com","error":"No recipients defined","level":"error","message":"Email Verification failed","timestamp":"2025-12-18T15:41:53.822Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T15:41:53.824Z","userId":"694420c09374a1c1329b54f3"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T15:42:18.091Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T15:42:18.343Z","userId":"694420da9374a1c1329b54f8"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T15:42:18.594Z","userId":"694420da9374a1c1329b54f8"}
+{"email":"rtD3wR","error":"No recipients defined","level":"error","message":"Failed to send verification email","timestamp":"2025-12-18T15:42:19.471Z"}
+{"email":"snowsparrow5566@gmail.com","error":"No recipients defined","level":"error","message":"Email Verification failed","timestamp":"2025-12-18T15:42:19.473Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T15:42:19.480Z","userId":"694420da9374a1c1329b54f8"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T17:52:40.104Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T17:52:40.373Z","userId":"69443f68bb8be88f5653cbe8"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T17:53:55.494Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T17:53:55.691Z","userId":"69443fb3ccd114cc8244f0f2"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T17:53:55.898Z","userId":"69443fb3ccd114cc8244f0f2"}
+{"email":"NsLdpx","error":"No recipients defined","level":"error","message":"Failed to send verification email","timestamp":"2025-12-18T17:53:57.003Z"}
+{"email":"snowsparrow5566@gmail.com","error":"No recipients defined","level":"error","message":"Email Verification failed","timestamp":"2025-12-18T17:53:57.013Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T17:53:57.015Z","userId":"69443fb3ccd114cc8244f0f2"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T18:11:56.082Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T18:11:56.322Z","userId":"694443ec5b203f0588950f6a"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T18:11:56.491Z","userId":"694443ec5b203f0588950f6a"}
+{"email":"AUR1eG","error":"No recipients defined","level":"error","message":"Failed to send verification email","timestamp":"2025-12-18T18:11:57.515Z"}
+{"email":"snowsparrow5566@gmail.com","error":"No recipients defined","level":"error","message":"Email Verification failed","timestamp":"2025-12-18T18:11:57.519Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T18:11:57.522Z","userId":"694443ec5b203f0588950f6a"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T18:14:14.291Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T18:14:14.518Z","userId":"6944447698b952f029305e45"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T18:14:14.669Z","userId":"6944447698b952f029305e45"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-18T18:14:17.436Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T18:14:17.444Z","userId":"6944447698b952f029305e45"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T23:43:29.153Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T23:43:29.381Z","userId":"694491a1f0e5e278cfc336f5"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T23:43:29.522Z","userId":"694491a1f0e5e278cfc336f5"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-18T23:43:32.106Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T23:43:32.107Z","userId":"694491a1f0e5e278cfc336f5"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T23:47:42.419Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T23:47:42.647Z","userId":"6944929eb1fed35801c9296e"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T23:47:42.786Z","userId":"6944929eb1fed35801c9296e"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-18T23:47:44.895Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T23:47:44.897Z","userId":"6944929eb1fed35801c9296e"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T23:49:15.024Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T23:49:15.247Z","userId":"694492fbba291dbb26251488"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T23:49:15.401Z","userId":"694492fbba291dbb26251488"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-18T23:49:18.004Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T23:49:18.007Z","userId":"694492fbba291dbb26251488"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2025-12-18T23:54:54.417Z","userId":"694492fbba291dbb26251488"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-18T23:56:59.497Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-18T23:56:59.776Z","userId":"694494cbeca3650a05c9005f"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-18T23:56:59.928Z","userId":"694494cbeca3650a05c9005f"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-18T23:57:02.401Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-18T23:57:02.403Z","userId":"694494cbeca3650a05c9005f"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2025-12-18T23:57:54.087Z","userId":"694494cbeca3650a05c9005f"}
+{"email":"snowsparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2025-12-19T00:00:12.509Z"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-19T00:00:32.762Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-19T00:00:33.061Z","userId":"694495a1d227e7db22797d24"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-19T00:00:33.211Z","userId":"694495a1d227e7db22797d24"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-19T00:00:35.502Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-19T00:00:35.503Z","userId":"694495a1d227e7db22797d24"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2025-12-19T00:01:57.949Z","userId":"694495a1d227e7db22797d24"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2025-12-19T00:10:03.092Z","userId":"694495a1d227e7db22797d24"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2025-12-19T00:16:29.885Z","userId":"694495a1d227e7db22797d24"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2025-12-19T00:21:34.655Z","userId":"694495a1d227e7db22797d24"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2025-12-19T00:24:28.962Z","userId":"694495a1d227e7db22797d24"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":["verify-email","reset-password"],"timestamp":"2025-12-19T00:38:06.683Z","userId":"694495a1d227e7db22797d24"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-19T00:44:34.279Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-19T00:44:34.606Z","userId":"69449ff24cfcc2c5fab27a1a"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-19T00:44:34.876Z","userId":"69449ff24cfcc2c5fab27a1a"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-19T00:44:37.323Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-19T00:44:37.326Z","userId":"69449ff24cfcc2c5fab27a1a"}
+{"level":"info","message":"OTP verified successfully","purpose":["verify-email","reset-password"],"timestamp":"2025-12-19T00:45:06.874Z","userId":"69449ff24cfcc2c5fab27a1a"}
+{"level":"info","message":"User email verified","timestamp":"2025-12-19T00:45:06.906Z","userId":"69449ff24cfcc2c5fab27a1a"}
+{"level":"info","message":"OTP deleted","otpId":"69449ff24cfcc2c5fab27a1c","timestamp":"2025-12-19T00:45:06.916Z"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2025-12-19T00:45:06.930Z","userId":"69449ff24cfcc2c5fab27a1a"}
+{"level":"warn","message":"OTP verification failed: invalid or expired","purpose":["verify-email","reset-password"],"timestamp":"2025-12-19T00:46:00.422Z","userId":"69449ff24cfcc2c5fab27a1a"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-19T00:46:18.919Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-19T00:46:19.254Z","userId":"6944a05bdc91d2879282cd48"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-19T00:46:19.489Z","userId":"6944a05bdc91d2879282cd48"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-19T00:46:21.765Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-19T00:46:21.766Z","userId":"6944a05bdc91d2879282cd48"}
+{"level":"info","message":"OTP verified successfully","purpose":["verify-email","reset-password"],"timestamp":"2025-12-19T00:46:45.616Z","userId":"6944a05bdc91d2879282cd48"}
+{"level":"info","message":"User email verified","timestamp":"2025-12-19T00:46:45.625Z","userId":"6944a05bdc91d2879282cd48"}
+{"level":"info","message":"OTP deleted","otpId":"6944a05bdc91d2879282cd4a","timestamp":"2025-12-19T00:46:45.634Z"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2025-12-19T00:46:45.636Z","userId":"6944a05bdc91d2879282cd48"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-19T00:50:01.238Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-19T00:50:01.456Z","userId":"6944a139dc91d2879282cd51"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-19T00:50:01.674Z","userId":"6944a139dc91d2879282cd51"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-19T00:50:03.703Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-19T00:50:03.704Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"OTP verified successfully","purpose":["verify-email","reset-password"],"timestamp":"2025-12-19T00:50:29.315Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"User email verified","timestamp":"2025-12-19T00:50:29.320Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"OTP deleted","otpId":"6944a139dc91d2879282cd53","timestamp":"2025-12-19T00:50:29.324Z"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2025-12-19T00:50:29.333Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"User login verified","timestamp":"2025-12-19T01:07:38.491Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"User login verified","timestamp":"2025-12-19T01:08:34.942Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"Tokens generated","timestamp":"2025-12-19T01:08:34.984Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"Refresh token saved","timestamp":"2025-12-19T01:08:35.103Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"User logged in","timestamp":"2025-12-19T01:08:35.109Z","userId":"6944a139dc91d2879282cd51"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T01:09:14.438Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T01:09:16.423Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T01:09:31.632Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T01:09:34.124Z"}
+{"level":"info","message":"User login verified","timestamp":"2025-12-19T01:10:49.564Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"Tokens generated","timestamp":"2025-12-19T01:10:49.576Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"Refresh token saved","timestamp":"2025-12-19T01:10:49.598Z","userId":"6944a139dc91d2879282cd51"}
+{"level":"info","message":"User logged in","timestamp":"2025-12-19T01:10:49.601Z","userId":"6944a139dc91d2879282cd51"}
+{"email":"snowsparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2025-12-19T01:14:31.464Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2025-12-19T01:14:31.787Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-19T01:14:32.058Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2025-12-19T01:14:34.600Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2025-12-19T01:14:34.601Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"warn","message":"OTP request rate limited","purpose":"verify-email","timestamp":"2025-12-19T01:15:01.536Z","userId":"6944a6f704f2c5a809d25cc8","waitSeconds":30}
+{"level":"info","message":"OTP deleted","otpId":"6944a6f804f2c5a809d25cca","timestamp":"2025-12-19T01:16:25.633Z"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"verify-email","timestamp":"2025-12-19T01:16:25.637Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2025-12-19T01:16:25.963Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2025-12-19T01:16:28.050Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"verify-email","timestamp":"2025-12-19T01:16:28.051Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"OTP verified successfully","purpose":["verify-email","reset-password"],"timestamp":"2025-12-19T01:16:54.593Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"User email verified","timestamp":"2025-12-19T01:16:54.602Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"OTP deleted","otpId":"6944a76904f2c5a809d25cd2","timestamp":"2025-12-19T01:16:54.614Z"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2025-12-19T01:16:54.615Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"User login verified","timestamp":"2025-12-19T01:17:00.967Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"Tokens generated","timestamp":"2025-12-19T01:17:00.974Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"Refresh token saved","timestamp":"2025-12-19T01:17:01.010Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"User logged in","timestamp":"2025-12-19T01:17:01.069Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2025-12-19T01:19:28.309Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2025-12-19T01:19:28.942Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2025-12-19T01:19:31.150Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2025-12-19T01:19:31.151Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2025-12-19T16:26:28.393Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2025-12-19T16:26:28.757Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Password reset email sent","timestamp":"2025-12-19T16:26:31.489Z"}
+{"level":"info","message":"Password reset requested","timestamp":"2025-12-19T16:26:31.491Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"warn","message":"OTP verification failed: invalid or expired","purpose":"reset-password","timestamp":"2025-12-19T16:30:27.622Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2025-12-19T16:30:52.883Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2025-12-19T16:30:53.111Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Password reset email sent","timestamp":"2025-12-19T16:30:55.267Z"}
+{"level":"info","message":"Password reset requested","timestamp":"2025-12-19T16:30:55.269Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"deletedCount":1,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2025-12-19T16:31:03.841Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2025-12-19T16:31:04.043Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Password reset email sent","timestamp":"2025-12-19T16:31:05.946Z"}
+{"level":"info","message":"Password reset requested","timestamp":"2025-12-19T16:31:05.947Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"reset-password","timestamp":"2025-12-19T16:31:35.641Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"OTP verified successfully","purpose":"reset-password","timestamp":"2025-12-19T16:31:45.521Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"warn","message":"Attempt password reuse","timestamp":"2025-12-19T16:31:45.708Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"OTP verified successfully","purpose":"reset-password","timestamp":"2025-12-19T16:31:54.883Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"User password updated","timestamp":"2025-12-19T16:31:55.274Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"level":"info","message":"OTP deleted","otpId":"69457dc8b265d9cccbbb16ff","timestamp":"2025-12-19T16:31:55.280Z"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Password reset success email sent","timestamp":"2025-12-19T16:31:57.172Z"}
+{"level":"info","message":"Password reset successfully","timestamp":"2025-12-19T16:31:57.173Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2025-12-19T16:34:17.757Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2025-12-19T16:34:18.050Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Password reset email sent","timestamp":"2025-12-19T16:34:22.300Z"}
+{"level":"info","message":"Password reset requested","timestamp":"2025-12-19T16:34:22.303Z","userId":"6944a6f704f2c5a809d25cc8"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:36:44.731Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:36:50.517Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:36:56.309Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:37:01.781Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:37:03.414Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:51:50.768Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:51:53.033Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:51:54.701Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:58:48.906Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:58:50.782Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:58:54.112Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:58:55.909Z"}
+{"email":"snowsparrow5566@gmail.com","level":"warn","message":"failed login attempt","timestamp":"2025-12-19T16:58:57.432Z"}
