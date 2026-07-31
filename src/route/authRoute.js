@@ -21,7 +21,7 @@ router.post(
   "/login",
   loginLimiter,
   validate(loginSchema),
-  authController.login
+  authController.login,
 );
 
 // verify OTP
@@ -29,7 +29,7 @@ router.post(
   "/verify-otp",
   otpLimiter,
   validate(otpSchema),
-  authController.verifyOtp
+  authController.verifyOtp,
 );
 
 // resend OTP
@@ -37,7 +37,7 @@ router.post(
   "/resend-otp",
   otpLimiter,
   validate(resendOtpSchema),
-  authController.resentOtp
+  authController.resentOtp,
 );
 
 // ==== PASSWORD RESET ====
@@ -45,21 +45,12 @@ router.post(
   "/request-password-reset",
   otpLimiter,
   validate(requestPasswordResetSchema),
-  authController.requestPasswordReset
+  authController.requestPasswordReset,
 );
 router.post(
   "/reset-password",
   validate(passwordResetSchema),
-  authController.resetPassword
+  authController.resetPassword,
 );
 
 module.exports = router;
-
-
-
-// 2. E-Commerce Backend (Products, Orders, Payments)
-// - Products CRUD
-// - Brands, categories
-// - Cart and checkout logic
-// - Orders and payment simulation
-

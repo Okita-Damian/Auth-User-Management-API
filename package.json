@@ -1,17 +1,28 @@
 {
   "name": "authentication-user-management-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "The API provides user registration, login, Email sending OTP, OTP verification, password reset, token refresh, logout, and rate-limited security flows.",
+  "keywords": [],
+  "homepage": "https://github.com/Okita-Damian/Auth-User-Management-API#readme",
+  "bugs": {
+    "url": "https://github.com/Okita-Damian/Auth-User-Management-API/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Okita-Damian/Auth-User-Management-API.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "@getbrevo/brevo": "^6.0.2",
+    "axios": "^1.19.0",
     "bcryptjs": "^3.0.3",
     "connect-mongodb-session": "^5.0.0",
     "cookie-parser": "^1.4.7",
@@ -24,7 +35,9 @@
     "joi": "^18.0.2",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.0.1",
-    "nodemailer": "^7.0.11",
+    "nodemailer": "^9.0.3",
+    "nodemon": "^3.1.14",
+    "sib-api-v3-sdk": "^8.5.0",
     "winston": "^3.19.0"
   }
 }

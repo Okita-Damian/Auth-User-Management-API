@@ -1,6 +1,6 @@
 # Authentication API
 
-The API provides user registration, login, Email sending OTP, OTP verification, password reset, token refresh, logout, and rate-limited security flows.
+A secure Authentication API built with **Node.js, Express.js, MongoDB, JWT, Joi, and Brevo Email API**. The API provides user registration, email verification via OTP, login, password reset, token refresh, logout, and rate-limited security flows.
 
 ---
 
@@ -40,96 +40,136 @@ src/
 └── server.js
 ```
 
-**Notes**
+### Notes
 
-- `controller/` contains request handling logic
-- `routes/` defines HTTP endpoints and middleware order
-- `service/` contains business logic (auth, OTP, email)
-- `validation/` holds Joi schemas
-- `middleware/` contains shared middleware (rate limiting, async handling)
-- `utils/` contains reusable helpers
+- `controller/` contains request handling logic.
+- `routes/` defines HTTP endpoints and middleware order.
+- `service/` contains business logic for authentication, OTP generation, and email delivery.
+- `validation/` contains Joi request validation schemas.
+- `middleware/` contains reusable middleware such as validation, rate limiting, and async error handling.
+- `utils/` contains helper classes and utilities.
 
 ---
 
 ## Features
 
-- User registration with OTP email verification
-- Login with JWT access token
-- Refresh token rotation (stored in DB + HttpOnly cookie)
-- Logout with refresh token invalidation
-- Forgot password & reset password via OTP
-- OTP resend with rate limiting
-- Centralized async error handling
-- Joi validation on all requests
+- User registration with email OTP verification
+- Email delivery powered by Brevo
+- JWT access and refresh token authentication
+- Refresh token storage and rotation
+- Secure logout flow
+- Forgot password and password reset via OTP
+- OTP resend functionality
+- Rate limiting for login and OTP endpoints
+- Centralized error handling
+- Request validation using Joi
+- Structured application logging
+
+---
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB & Mongoose
+- JSON Web Token (JWT)
+- Joi Validation
+- Brevo Email API
+- bcryptjs
+- express-rate-limit
+
+---
+
+## Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+PORT=3000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_KEY=your_access_token_secret
+JWT_REFRESH_KEY=your_refresh_token_secret
+
+BREVO_API_KEY=your_brevo_api_key
+BREVO_SENDER_EMAIL=your_verified_sender_email
+```
 
 ---
 
 ## Base Route
 
-All routes are prefixed with:
+All authentication routes are prefixed with:
 
-```
+```text
 /auth
 ```
 
 ---
 
-## Auth Routes
+# Authentication Endpoints
 
-### 1. Register
+## 1. Register
 
-`POST /auth/register`
+### Endpoint
 
-**Description**
+```http
+POST /auth/register
+```
 
-- Creates a new user
-- Generates an OTP for email verification
-- Sends verification OTP to email
+### Description
 
-**Request Body**
+- Creates a new user account
+- Hashes the user's password
+- Generates an email verification OTP
+- Sends the OTP through Brevo Email API
+
+### Request Body
 
 ```json
 {
-  "fullName": "John Doe",
+  "fullname": "John Doe",
   "email": "john@example.com",
   "password": "Password123"
 }
 ```
 
-**Response**
+### Success Response
 
 ```json
 {
   "status": "success",
-  "message": "Registration successful. Please check your email for otp Verification"
+  "message": "Registration successful. Please check your email for OTP verification."
 }
 ```
 
 ---
 
-### 2. Verify OTP
+## 2. Verify OTP
 
-`POST /auth/verify-otp`
+### Endpoint
 
-**Description**
+```http
+POST /auth/verify-otp
+```
 
-- Verifies OTP for:
+### Description
 
-  - Email verification
-  - Password reset
+- Verifies a previously generated OTP
+- Activates user email verification
+- Deletes OTP after successful verification
 
-- OTP is deleted after use
-
-**Request Body**
+### Request Body
 
 ```json
 {
   "email": "john@example.com",
-  "otp": "a1b2c3"
+  "otp": "123456"
 }
 ```
 
-**Response**
+### Success Response
 
 ```json
 {
@@ -140,16 +180,21 @@ All routes are prefixed with:
 
 ---
 
-### 3. Resend OTP
+## 3. Resend OTP
 
-`POST /auth/resend-otp`
+### Endpoint
 
-**Description**
+```http
+POST /auth/resend-otp
+```
 
-- Resend OTP for a specific purpose
-- Enforces OTP resend rate limiting
+### Description
 
-**Request Body**
+- Generates a new OTP
+- Sends a replacement OTP through Brevo
+- Subject to rate limiting
+
+### Request Body
 
 ```json
 {
@@ -158,24 +203,40 @@ All routes are prefixed with:
 }
 ```
 
-**Allowed purposes**
+### Allowed Purposes
 
-- `verify-email`
-- `reset-password`
+```text
+verify-email
+reset-password
+```
+
+### Success Response
+
+```json
+{
+  "status": "success",
+  "message": "OTP sent successfully."
+}
+```
 
 ---
 
-### 4. Login
+## 4. Login
 
-`POST /auth/login`
+### Endpoint
 
-**Description**
+```http
+POST /auth/login
+```
 
-- Authenticates user credentials
-- Returns JWT access token
-- Sets refresh token as HttpOnly cookie
+### Description
 
-**Request Body**
+- Verifies user credentials
+- Ensures email has been verified
+- Generates access and refresh tokens
+- Stores refresh token in the database
+
+### Request Body
 
 ```json
 {
@@ -184,34 +245,34 @@ All routes are prefixed with:
 }
 ```
 
-**Response**
+### Success Response
 
 ```json
 {
   "status": "success",
   "message": "Login successful",
-  "token": "<access_token>",
-  "user": {
-    "id": "userId",
-    "fullName": "John Doe",
-    "email": "john@example.com",
-    "role": "user"
-  }
+  "accessToken": "jwt_access_token",
+  "refreshToken": "jwt_refresh_token"
 }
 ```
 
 ---
 
-### 5. Request Password Reset
+## 5. Request Password Reset
 
-`POST /auth/request-password-reset`
+### Endpoint
 
-**Description**
+```http
+POST /auth/request-password-reset
+```
 
-- Sends OTP for password reset
-- Always returns success to prevent email enumeration
+### Description
 
-**Request Body**
+- Generates password reset OTP
+- Sends OTP through Brevo Email API
+- Returns a generic response to prevent email enumeration attacks
+
+### Request Body
 
 ```json
 {
@@ -219,113 +280,182 @@ All routes are prefixed with:
 }
 ```
 
----
-
-### 6. Reset Password
-
-`POST /auth/reset-password`
-
-**Description**
-
-- Verifies OTP
-- Updates user password
-- Deletes OTP after use
-
-**Request Body**
+### Success Response
 
 ```json
 {
-  "email": "john@example.com",
-  "otp": "a1b2c3",
-  "newPassword": "NewPassword123"
+  "status": "success",
+  "message": "If the email exists, a password reset OTP has been sent."
 }
 ```
 
 ---
 
-### 7. Logout
+## 6. Reset Password
 
-`POST /auth/logout`
+### Endpoint
 
-**Description**
+```http
+POST /auth/reset-password
+```
 
-- Clears refresh token from database
-- Clears refresh token cookie
+### Description
+
+- Verifies password reset OTP
+- Prevents password reuse
+- Updates user password
+- Deletes OTP after successful reset
+
+### Request Body
+
+```json
+{
+  "email": "john@example.com",
+  "otp": "123456",
+  "newPassword": "NewPassword123"
+}
+```
+
+### Success Response
+
+```json
+{
+  "status": "success",
+  "message": "Password reset successful."
+}
+```
 
 ---
 
-### 8. Refresh Token
+## 7. Logout
 
-`POST /auth/refresh-token`
+### Endpoint
 
-**Description**
+```http
+POST /auth/logout
+```
 
-- Verifies refresh token
+### Description
+
+- Removes refresh token from the database
+- Invalidates the user session
+
+### Success Response
+
+```json
+{
+  "status": "success",
+  "message": "Logged out successfully."
+}
+```
+
+---
+
+## 8. Refresh Token
+
+### Endpoint
+
+```http
+POST /auth/refresh-token
+```
+
+### Description
+
+- Validates refresh token
+- Issues a new access token
 - Rotates refresh token
-- Returns new access token
+
+### Success Response
+
+```json
+{
+  "status": "success",
+  "accessToken": "new_access_token",
+  "refreshToken": "new_refresh_token"
+}
+```
 
 ---
 
-## Validation & Middleware
+# Validation & Middleware
 
-- **Joi validation** runs before controllers
-- **Rate limiting** is applied on:
+### Joi Validation
 
-  - Login routes
-  - OTP routes
-  - Password reset routes
+All incoming requests are validated before reaching the controller layer.
 
-- **asyncHandler** ensures all async errors are caught
+### Async Handler
 
----
+All asynchronous route handlers are wrapped to ensure proper error propagation.
 
-## Rate Limiting Rules
+### Rate Limiting
 
-| Route Type  | Limit                                 |
-| ----------- | ------------------------------------- |
-| Login       | 5 failed attempts / 10 min (IP-based) |
-| OTP / Reset | 3 attempts / 30 min                   |
-| General     | 100 requests / 15 min                 |
+Rate limiting is applied to sensitive authentication endpoints to prevent abuse.
 
 ---
 
-## Security Notes
+# Rate Limiting Rules
 
-- OTPs are single-use and time-limited
-- Passwords are hashed before storage
-- Refresh tokens are stored securely and rotated
-- Cookies are HttpOnly and secure in production
-- Email existence is not leaked during password reset
+| Route Type       | Limit                     |
+| ---------------- | ------------------------- |
+| Login            | 5 attempts / 10 minutes   |
+| OTP Verification | 3 attempts / 30 minutes   |
+| Password Reset   | 3 attempts / 30 minutes   |
+| General Requests | 100 requests / 15 minutes |
 
 ---
 
-## How to Run
+# Security Features
+
+- Passwords hashed using bcrypt
+- Email verification required before login
+- Single-use OTPs
+- OTP expiration support
+- Refresh token rotation
+- Secure JWT authentication
+- Centralized error handling
+- Protection against email enumeration
+- Request rate limiting
+- Environment variable configuration
+
+---
+
+# Running the Application
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Start development server:
+
+```bash
 npm run dev
 ```
 
-Server runs on:
+Server URL:
 
-```
-http://localhost:5000
+```text
+http://localhost:3000
 ```
 
 ---
 
-## Testing Flow (Recommended)
+# Recommended Testing Flow
 
-1. Register
-2. Verify OTP
-3. Login
-4. Request password reset
-5. Verify OTP
-6. Reset password
-7. Login again
+1. Register a new user
+2. Receive OTP through Brevo email
+3. Verify email using OTP
+4. Login
+5. Request password reset
+6. Receive password reset OTP
+7. Reset password
+8. Login using the new password
+9. Refresh access token
+10. Logout
 
 ---
 
-## License
+# License
 
-MIT
+MIT License
