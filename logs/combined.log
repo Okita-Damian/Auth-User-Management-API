@@ -296,3 +296,8 @@
 {"level":"info","message":"Tokens generated","timestamp":"2026-07-31T16:33:07.782Z","userId":"6a6cc872ba4ea3553f0af1b0"}
 {"level":"info","message":"Refresh token saved","timestamp":"2026-07-31T16:33:08.279Z","userId":"6a6cc872ba4ea3553f0af1b0"}
 {"level":"info","message":"User logged in","timestamp":"2026-07-31T16:33:08.280Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"info","message":"User login verified","timestamp":"2026-07-31T16:54:22.259Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"info","message":"Tokens generated","timestamp":"2026-07-31T16:54:22.276Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"info","message":"Refresh token saved","timestamp":"2026-07-31T16:54:22.764Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"info","message":"User logged in","timestamp":"2026-07-31T16:54:22.767Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"email":"damiansparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2026-07-31T17:00:50.599Z"}

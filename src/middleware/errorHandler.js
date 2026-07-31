@@ -47,7 +47,7 @@ const errorHandler = (err, req, res, next) => {
   err.status = err.status || "error";
 
   if (process.env.NODE_ENV === "production") {
-    let error = object.assign({}, err);
+    let error = Object.assign({}, err);
     error.message = err.message;
 
     // Default
@@ -91,7 +91,7 @@ const errorHandler = (err, req, res, next) => {
     error.message = message;
     error.statusCode = statusCode;
 
-    sendErrorProd(error, res);
+    sendErrorProd(error, req, res);
   } else {
     sendErrorDev(err, res);
   }
