@@ -81,18 +81,16 @@ exports.verifyOtp = asyncHandler(async (req, res, next) => {
   }
 
   //  Verify OTP
-  const otpDetails = await otpService.verifyOTP(user._id, otp, [
+  const otpDetails = await otpService.verifyOTP(
+    user._id,
+    sanitizedOtp,
     "verify-email",
-    "reset-password",
-  ]);
+  );
 
   // Perform action based on OTP purpose
   if (otpDetails.purpose === "verify-email") {
     await authService.verifyUserEmail(user._id);
   }
-
-  // Delete OTP after successful use
-  await otpService.deleteOTP(otpDetails._id);
 
   logger.info("OTP verified successfully", {
     userId: user._id,
@@ -138,9 +136,6 @@ exports.resentOtp = asyncHandler(async (req, res, next) => {
   // rate limiting OTP resend
   await otpService.checkRateLimit(user._id, normalizedPurpose, 30);
 
-  // Remove any existing OTP for this purpose
-  await otpService.deleteUserOTPs(user._id, normalizedPurpose);
-
   //  Create a new OTP
   const otp = await otpService.createOTP(user._id, normalizedPurpose, 1);
 
@@ -168,11 +163,12 @@ exports.requestPasswordReset = asyncHandler(async (req, res, next) => {
 
   //3. Look up user by email
   const user = await User.findOne({ email });
-  if (!user)
-    res.status(200).json({
+  if (!user) {
+    return res.status(200).json({
       status: "success",
       message: "A password reset OTP has been sent to your email.",
     });
+  }
   //   - Delete any existing reset-password OTPs
   await otpService.deleteUserOTPs(user._id, "reset-password");
 
@@ -183,7 +179,10 @@ exports.requestPasswordReset = asyncHandler(async (req, res, next) => {
   try {
     await emailService.sendPasswordResetEmail(email, otp);
   } catch (error) {
-    logger.error("Password reset email failed", { email, error: err.message });
+    logger.error("Password reset email failed", {
+      email,
+      error: error.message,
+    });
   }
 
   logger.info("Password reset requested", { userId: user._id });
@@ -214,7 +213,7 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
   const otpDetails = await otpService.verifyOTP(
     user._id,
     otp,
-    "reset-password"
+    "reset-password",
   );
   // Update user password (hash)
   await authService.updatePassword(user, newPassword);
@@ -326,7 +325,7 @@ exports.refreshToken = asyncHandler(async (req, res, next) => {
     authService.generateToken(user);
 
   // 6. Save new refresh token in DB
-  await authService.saveRefreshToken(user_id, newRefreshToken);
+  await authService.saveRefreshToken(user._id, newRefreshToken);
 
   //7. Set cookie with new refresh token
   res.cookie("refreshToken", newRefreshToken, {

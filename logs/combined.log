@@ -301,3 +301,94 @@
 {"level":"info","message":"Refresh token saved","timestamp":"2026-07-31T16:54:22.764Z","userId":"6a6cc872ba4ea3553f0af1b0"}
 {"level":"info","message":"User logged in","timestamp":"2026-07-31T16:54:22.767Z","userId":"6a6cc872ba4ea3553f0af1b0"}
 {"email":"damiansparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2026-07-31T17:00:50.599Z"}
+{"email":"damiansparrow5566@gmail.com","exists":true,"level":"info","message":"Checked if email exist","timestamp":"2026-07-31T17:01:27.634Z"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-07-31T17:08:43.203Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-07-31T17:08:43.632Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-07-31T17:08:44.443Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-07-31T17:08:44.444Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-07-31T17:14:28.611Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-07-31T17:14:29.106Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-07-31T17:14:29.894Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-07-31T17:14:29.897Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"warn","message":"OTP verification failed: invalid or expired","purpose":"reset-password","timestamp":"2026-08-10T22:36:43.128Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"warn","message":"OTP verification failed: invalid or expired","purpose":"reset-password","timestamp":"2026-08-10T22:38:27.683Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"warn","message":"OTP verification failed: invalid or expired","purpose":"reset-password","timestamp":"2026-08-10T22:38:42.197Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"warn","message":"OTP verification failed: invalid or expired","purpose":"reset-password","timestamp":"2026-08-10T22:39:21.881Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"warn","message":"OTP verification failed: invalid or expired","purpose":"reset-password","timestamp":"2026-08-10T22:44:32.878Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"level":"warn","message":"OTP verification failed: invalid or expired","purpose":"reset-password","timestamp":"2026-08-10T22:45:23.314Z","userId":"6a6cc872ba4ea3553f0af1b0"}
+{"email":"damiansparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2026-08-10T23:04:19.512Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2026-08-10T23:04:20.578Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2026-08-10T23:04:21.463Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2026-08-10T23:04:23.838Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2026-08-10T23:04:23.839Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-08-10T23:04:53.625Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-08-10T23:04:54.496Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:04:56.384Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:04:56.385Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2026-08-10T23:05:26.159Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-08-10T23:06:23.525Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-08-10T23:06:24.945Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:06:29.268Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:06:29.268Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":"verify-email","timestamp":"2026-08-10T23:07:03.384Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":["verify-email"],"timestamp":"2026-08-10T23:15:52.186Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-08-10T23:16:24.219Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-08-10T23:16:25.171Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:16:26.430Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:16:26.433Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"level":"warn","message":"OTP verification failed: maximum attempts exceeded","purpose":["verify-email"],"timestamp":"2026-08-10T23:16:52.257Z","userId":"6a7a58f4ce2d00876dd7e059"}
+{"email":"damiansparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2026-08-10T23:17:26.057Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2026-08-10T23:17:26.521Z","userId":"6a7a5c0643e511d048b00a1a"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2026-08-10T23:17:27.260Z","userId":"6a7a5c0643e511d048b00a1a"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2026-08-10T23:17:28.237Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2026-08-10T23:17:28.238Z","userId":"6a7a5c0643e511d048b00a1a"}
+{"level":"info","message":"OTP verified successfully","purpose":["verify-email"],"timestamp":"2026-08-10T23:18:06.735Z","userId":"6a7a5c0643e511d048b00a1a"}
+{"level":"info","message":"User email verified","timestamp":"2026-08-10T23:18:07.139Z","userId":"6a7a5c0643e511d048b00a1a"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2026-08-10T23:18:07.140Z","userId":"6a7a5c0643e511d048b00a1a"}
+{"email":"damiansparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2026-08-10T23:18:26.825Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2026-08-10T23:18:27.407Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2026-08-10T23:18:28.288Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2026-08-10T23:18:29.419Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2026-08-10T23:18:29.420Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-08-10T23:18:49.168Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-08-10T23:18:50.101Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:18:51.736Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:18:51.737Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"level":"warn","message":"OTP verification failed: incorrect OTP","purpose":["verify-email"],"timestamp":"2026-08-10T23:19:25.656Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-08-10T23:23:43.738Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-08-10T23:23:44.454Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:23:45.276Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:23:45.302Z","userId":"6a7a5c4243e511d048b00a1c"}
+{"email":"damiansparrow5566@gmail.com","exists":false,"level":"info","message":"Checked if email exist","timestamp":"2026-08-10T23:26:18.715Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"New user created","timestamp":"2026-08-10T23:26:19.615Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"expiryMinutes":60,"level":"info","message":"OTP created","purpose":"verify-email","timestamp":"2026-08-10T23:26:20.142Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Verification email sent","timestamp":"2026-08-10T23:26:21.061Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"User registered successfully","timestamp":"2026-08-10T23:26:21.062Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-08-10T23:26:29.187Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-08-10T23:26:29.719Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:26:30.456Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:26:30.456Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-08-10T23:35:18.368Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"expiryMinutes":1,"level":"info","message":"OTP created","purpose":"reset-password","timestamp":"2026-08-10T23:35:19.270Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:35:20.339Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:35:20.340Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:40:32.868Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:40:32.874Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:44:34.687Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:44:34.691Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"level":"info","message":"OTP deleted","otpId":"6a7a62614bf8387b285c40b9","timestamp":"2026-08-10T23:45:06.081Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:45:07.239Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"reset-password","timestamp":"2026-08-10T23:45:07.240Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-10T23:46:59.296Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"verify-email","timestamp":"2026-08-10T23:46:59.297Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2026-08-10T23:47:08.372Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"level":"info","message":"User email verified","timestamp":"2026-08-10T23:47:08.558Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2026-08-10T23:47:08.561Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"deletedCount":0,"level":"info","message":"Deleted all OTPs for user and purpose","purpose":"reset-password","timestamp":"2026-08-10T23:47:49.617Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Password reset email sent","timestamp":"2026-08-10T23:47:50.917Z"}
+{"level":"info","message":"Password reset requested","timestamp":"2026-08-10T23:47:50.917Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"level":"info","message":"OTP verified successfully","purpose":"reset-password","timestamp":"2026-08-10T23:48:22.217Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"level":"info","message":"User password updated","timestamp":"2026-08-10T23:48:22.746Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"level":"info","message":"OTP deleted","otpId":"6a7a63254bf8387b285c40bc","timestamp":"2026-08-10T23:48:22.913Z"}
+{"email":"damiansparrow5566@gmail.com","level":"info","message":"Password reset success email sent","timestamp":"2026-08-10T23:48:23.637Z"}
+{"level":"info","message":"Password reset successfully","timestamp":"2026-08-10T23:48:23.637Z","userId":"6a7a5e1b8cd8f304b5e4df46"}

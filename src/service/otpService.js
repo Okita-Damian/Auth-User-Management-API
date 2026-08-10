@@ -7,45 +7,70 @@ const logger = require("../utils/logger");
 class OTPService {
   // Create and save a new OTP
   async createOTP(userId, purpose, expiryMinutes = 60) {
-    const otp = generateOTP().toLowerCase();
-    const hashedOTP = await bcrypt.hash(String(otp), 10);
-
-    await otpModel.create({
-      otp: hashedOTP,
+    // Remove all previous OTPs for this user and purpose
+    await otpModel.deleteMany({
       userId,
       purpose,
-      expiresAt: new Date(Date.now() + expiryMinutes * 60 * 1000),
     });
 
-    logger.info("OTP created", { userId, purpose, expiryMinutes });
+    const otp = generateOTP();
+
+    const hashedOTP = await bcrypt.hash(otp, 10);
+
+    await otpModel.create({
+      userId,
+      otp: hashedOTP,
+      purpose,
+      expiresAt: new Date(Date.now() + expiryMinutes * 60 * 1000),
+      attempts: 0,
+    });
+
     return otp;
   }
 
   // Verify OTP
   async verifyOTP(userId, otp, purpose) {
-    const otpDetails = await otpModel.findOne({ userId, purpose });
+    const otpDetails = await otpModel
+      .findOne({ userId, purpose })
+      .sort({ createdAt: -1 });
 
-    if (!otpDetails || otpDetails.expiresAt < Date.now()) {
-      logger.warn("OTP verification failed: invalid or expired", {
-        userId,
-        purpose,
-      });
+    if (!otpDetails || new Date(otpDetails.expiresAt).getTime() < Date.now()) {
       throw new AppError("Invalid or expired OTP", 400);
     }
 
-    const isMatch = await bcrypt.compare(
-      String(otp).toLocaleLowerCase(),
-      otpDetails.otp
-    );
-    if (!isMatch) {
-      logger.warn("OTP verification failed: incorrect OTP", {
-        userId,
-        purpose,
+    if (otpDetails.attempts >= 3) {
+      await otpModel.deleteOne({
+        _id: otpDetails._id,
       });
+
+      throw new AppError(
+        "Too many failed attempts. Please request a new OTP.",
+        400,
+      );
+    }
+
+    const submittedOtp = String(otp).trim();
+
+    const isMatch = await bcrypt.compare(submittedOtp, otpDetails.otp);
+
+    if (!isMatch) {
+      await otpModel.updateOne(
+        { _id: otpDetails._id },
+        { $inc: { attempts: 1 } },
+      );
+
       throw new AppError("Invalid OTP", 400);
     }
 
-    logger.info("OTP verified successfully", { userId, purpose });
+    await otpModel.deleteOne({
+      _id: otpDetails._id,
+    });
+
+    logger.info("OTP verified successfully", {
+      userId,
+      purpose,
+    });
+
     return otpDetails;
   }
 
@@ -82,9 +107,9 @@ class OTPService {
         });
         throw new AppError(
           `Please wait ${Math.ceil(
-            waitSeconds - timeSinceLastOtp
+            waitSeconds - timeSinceLastOtp,
           )}s before requesting another OTP.`,
-          429
+          429,
         );
       }
 
