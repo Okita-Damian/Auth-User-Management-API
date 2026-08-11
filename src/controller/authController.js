@@ -108,38 +108,39 @@ exports.verifyOtp = asyncHandler(async (req, res, next) => {
 });
 
 exports.resentOtp = asyncHandler(async (req, res, next) => {
-  // extract input
   const { email, purpose } = req.body;
 
-  // validate the req.body
-  if (!email || !purpose)
+  if (!email || !purpose) {
     return next(new AppError("Email and purpose are required", 400));
+  }
 
-  // Normalize and validate purpose
   const normalizedPurpose = purpose.toLowerCase().trim();
+
   const allowedPurposes = ["verify-email", "reset-password"];
 
   if (!allowedPurposes.includes(normalizedPurpose)) {
     return next(new AppError("Invalid OTP purpose", 400));
   }
 
-  // find user by email
-  const user = await User.findOne({ email: email.toLowerCase().trim() });
+  const user = await User.findOne({
+    email: email.toLowerCase().trim(),
+  });
 
-  // validate the fnd
-  if (!user) return next(new AppError("No user is found", 404));
+  if (!user) {
+    return next(new AppError("No user is found", 404));
+  }
 
-  // prevent resending verification if verified
-  if (normalizedPurpose === "verify-email" && user.isEmailVerified)
+  if (normalizedPurpose === "verify-email" && user.isEmailVerified) {
     return next(new AppError("Email is already verified", 400));
+  }
 
-  // rate limiting OTP resend
+  // Only checks whether another OTP was
+  // created within the last 30 seconds.
   await otpService.checkRateLimit(user._id, normalizedPurpose, 30);
 
-  //  Create a new OTP
+  // This creates and saves the new OTP.
   const otp = await otpService.createOTP(user._id, normalizedPurpose, 1);
 
-  // Send OTP email
   await emailService.sendResendOTPEmail(user.email, otp);
 
   logger.info("OTP resent successfully", {
@@ -147,7 +148,6 @@ exports.resentOtp = asyncHandler(async (req, res, next) => {
     purpose: normalizedPurpose,
   });
 
-  //  Respond to client
   res.status(200).json({
     status: "success",
     message: "OTP sent to email successfully.",

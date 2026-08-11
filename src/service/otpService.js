@@ -92,7 +92,9 @@ class OTPService {
 
   // Check rate limiting for OTP requests
   async checkRateLimit(userId, purpose, waitSeconds = 30) {
-    const existingOtp = await otpModel.findOne({ userId, purpose });
+    const existingOtp = await otpModel
+      .findOne({ userId, purpose })
+      .sort({ createdAt: -1 });
 
     if (existingOtp) {
       const now = Date.now();
@@ -112,8 +114,6 @@ class OTPService {
           429,
         );
       }
-
-      await this.deleteOTP(existingOtp._id);
     }
   }
 }

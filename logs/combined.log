@@ -392,3 +392,10 @@
 {"level":"info","message":"OTP deleted","otpId":"6a7a63254bf8387b285c40bc","timestamp":"2026-08-10T23:48:22.913Z"}
 {"email":"damiansparrow5566@gmail.com","level":"info","message":"Password reset success email sent","timestamp":"2026-08-10T23:48:23.637Z"}
 {"level":"info","message":"Password reset successfully","timestamp":"2026-08-10T23:48:23.637Z","userId":"6a7a5e1b8cd8f304b5e4df46"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-11T11:05:56.349Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"verify-email","timestamp":"2026-08-11T11:05:56.410Z","userId":"6a7aff3e86fd5d97dd512fcd"}
+{"email":"snowsparrow5566@gmail.com","level":"info","message":"Resend OTP email sent","timestamp":"2026-08-11T11:15:19.727Z"}
+{"level":"info","message":"OTP resent successfully","purpose":"verify-email","timestamp":"2026-08-11T11:15:19.739Z","userId":"6a7aff3e86fd5d97dd512fcd"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2026-08-11T11:15:39.452Z","userId":"6a7aff3e86fd5d97dd512fcd"}
+{"level":"info","message":"User email verified","timestamp":"2026-08-11T11:15:39.658Z","userId":"6a7aff3e86fd5d97dd512fcd"}
+{"level":"info","message":"OTP verified successfully","purpose":"verify-email","timestamp":"2026-08-11T11:15:39.658Z","userId":"6a7aff3e86fd5d97dd512fcd"}

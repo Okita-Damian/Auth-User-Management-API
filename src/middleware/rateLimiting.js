@@ -7,7 +7,6 @@ const keyGenerator = (req) => {
     return `user:${req.user.id}`;
   }
   // otherwise, fall back to ip address
-  console.log("Rate limit key", keyGenerator);
   return ipKeyGenerator(req);
 };
 
