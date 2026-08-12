@@ -19,14 +19,13 @@ exports.registerSchema = Joi.object({
       "string.empty": "Email can't be Empty",
       "string.email": "Email must be valid",
     }),
-  gender: Joi.string().lowercase().valid("male", "female").required().messages({
+  gender: Joi.string().lowercase().valid("male", "female").messages({
     "any.required": "Gender is required",
     "string.empty": "Gender cannot be empty",
   }),
   phoneNumber: Joi.string()
     .trim()
     .pattern(/^(?:\+234|0)[789][01]\d{8}$/) // Validates Nigerian format (en-NG)
-    .required()
     .messages({
       "string.pattern.base": "Please provide a valid phone number",
       "any.required": "Please provide your phone number",
