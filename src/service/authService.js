@@ -1,138 +1,291 @@
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 const User = require("../model/authModel");
+const OTP = require("../model/otpModel");
 const AppError = require("../utils/appError");
+const hashPassword = require("../utils/hashPassword");
+const generateOTP = require("../utils/generateOTP");
+const generateRefreshToken = require("../utils/generateRefreshToken");
+const generateToken = require("../utils/generateToken");
+const emailService = require("../service/emailService");
+const comparePassword = require("../utils/comparePassword");
+
 const logger = require("../utils/logger");
 
-class AuthService {
-  // email verification and query the DB to check email, return user doc if found or null if no user is found
-  async emailExist(email) {
-    const user = await User.findOne({ email });
-    logger.info("Checked if email exist", { email, exists: !!user });
-    return user;
-  }
-  // create a new user
-  async createUser(userData) {
-    // hash password before saving
-    const hashedPassword = await bcrypt.hash(userData.password, 10);
+// Register a user
+const registerService = async (data) => {
+  const { fullName, email, password, phoneNumber, gender } = data;
 
-    // create the user record
-    const newUser = await User.create({
-      fullname: userData.fullname,
-      email: userData.email,
-      password: hashedPassword,
-    });
-    logger.info("New user created", {
-      userId: newUser._id,
-      email: newUser.email,
-    });
-    return newUser;
-  }
+  const normalizedEmail = email.toLowerCase();
 
-  // verify the login credentials
-  async verifyCredentials(email, password) {
-    // find user by email and exclude the password
-    const user = await User.findOne({ email }).select("+password");
+  // Find user by email or phone number
+  const user = await User.findOne({
+    $or: [{ email: normalizedEmail }, { phoneNumber }],
+  });
 
-    // if user not found and credential did't match throw error
-    if (!user || !(await bcrypt.compare(password, user.password))) {
-      logger.warn("failed login attempt", { email });
-      throw new AppError("Incorrect email or password", 401);
+  if (user) {
+    if (user.email === normalizedEmail) {
+      throw new AppError("Email already exists", 400);
     }
 
-    // Block login if email not verified
-    if (!user.isEmailVerified) {
-      logger.warn("Attempted login without verified email", {
-        userId: user._id,
-      });
-      logger.warn("Attempted login without verified email", {
-        userId: user._id,
-      });
-      throw new AppError("Please verify you email", 403);
+    throw new AppError("Phone number already exists", 400);
+  }
+
+  // Hash password
+  const hashedPassword = await hashPassword(password);
+
+  // Create user
+  const newUser = new User({
+    fullName,
+    password: hashedPassword,
+    gender,
+    email: normalizedEmail,
+    phoneNumber,
+    isVerified: false,
+  });
+
+  // Generate OTP
+  const { otp, hashedOTP } = generateOTP();
+
+  await newUser.save();
+
+  const otpRecord = await OTP.create({
+    userId: newUser._id,
+    otp: hashedOTP,
+    purpose: "verify-email",
+  });
+
+  await emailService.sendVerificationEmail(normalizedEmail, otp);
+  logger.info("User registered successfully", {
+    userId: newUser._id,
+    email: normalizedEmail,
+  });
+
+  return {
+    userId: newUser._id,
+    email: normalizedEmail,
+    message:
+      "Registration successful. Please check your email for the verification OTP.",
+  };
+};
+
+const verifyEmailService = async (email, otp) => {
+  const user = await User.findOne({
+    email: email.toLowerCase(),
+  });
+
+  if (!user) {
+    throw new AppError("User not found", 404);
+  }
+
+  if (user.isVerified) {
+    throw new AppError("Email already verified", 400);
+  }
+
+  const otpRecord = await OTP.findOne({
+    userId: user._id,
+    purpose: "verify-email",
+  }).select("+otp");
+
+  if (!otpRecord) {
+    // Debug: see what OTP records actually exist for this user
+    const allUserOtps = await OTP.find({
+      userId: user._id,
+    }).select("+otp");
+
+    throw new AppError("OTP not found or expired", 404);
+  }
+
+  const hashedOTP = generateOTP.hashOTP(otp);
+
+  if (otpRecord.otp !== hashedOTP) {
+    otpRecord.attempts += 1;
+
+    if (otpRecord.attempts >= 5) {
+      await OTP.findByIdAndDelete(otpRecord._id);
+
+      throw new AppError("Too many failed attempts. Request a new OTP.", 429);
     }
-    logger.info("User login verified", { userId: user._id });
-    return user;
+
+    await otpRecord.save();
+
+    throw new AppError("Invalid OTP", 400);
   }
 
-  // create access token
-  generateToken(user) {
-    const accessToken = jwt.sign(
-      {
-        userId: user._id,
-        email: user.email,
-      },
-      process.env.JWT_KEY,
-      { expiresIn: "15m" }
-    );
+  user.isVerified = true;
+  await user.save();
 
-    // create a refresh token
-    const refreshToken = jwt.sign(
-      { userId: user._id },
-      process.env.JWT_REFRESH_KEY,
-      { expiresIn: "7d" }
-    );
+  await OTP.findByIdAndDelete(otpRecord._id);
 
-    logger.info("Tokens generated", { userId: user._id });
-    return { accessToken, refreshToken };
+  return user;
+};
+
+const resendOTPService = async (email) => {
+  const user = await User.findOne({
+    email: email.toLowerCase(),
+  });
+
+  if (!user) {
+    throw new AppError("User not found", 404);
   }
 
-  // verify the refreshToken
-  verifyRefreshToken(token) {
-    try {
-      return jwt.verify(token, process.env.JWT_REFRESH_KEY);
-    } catch (err) {
-      logger.warn("Invalid refresh token", { error: err.message });
-      throw new AppError("Invalid or expired refresh token", 401);
+  if (user.isVerified) {
+    throw new AppError("Email already verified", 400);
+  }
+
+  await OTP.deleteMany({
+    userId: user._id,
+    purpose: "verify-email",
+  });
+
+  const { otp, hashedOTP } = generateOTP();
+
+  await OTP.create({
+    userId: user._id,
+    otp: hashedOTP,
+    purpose: "verify-email",
+  });
+
+  await emailService.sendVerificationEmail(email.toLowerCase(), otp);
+  return {
+    user,
+  };
+};
+
+const loginService = async (email, password) => {
+  const user = await User.findOne({
+    email: email.toLowerCase(),
+  }).select("+password +refreshToken");
+
+  if (!user) {
+    throw new AppError("Invalid email or password", 401);
+  }
+
+  if (!user.isVerified) {
+    throw new AppError("Please verify your email before logging in", 401);
+  }
+
+  const isPasswordCorrect = await comparePassword(password, user.password);
+
+  if (!isPasswordCorrect) {
+    throw new AppError("Invalid email or password", 401);
+  }
+
+  const accessToken = generateToken(user._id);
+
+  const refreshToken = generateRefreshToken(user._id);
+
+  user.refreshToken = refreshToken;
+
+  await user.save();
+
+  return {
+    user,
+    accessToken,
+    refreshToken,
+  };
+};
+
+// Logout
+const logoutService = async (userId) => {
+  const user = await User.findByIdAndUpdate(userId, { refreshToken: null });
+  if (!user) {
+    throw new AppError("User not found", 404);
+  }
+};
+
+const forgotPasswordService = async (email) => {
+  const user = await User.findOne({
+    email: email.toLowerCase(),
+  });
+
+  if (!user) {
+    throw new AppError("No user found with this email", 404);
+  }
+
+  await OTP.deleteMany({ userId: user._id, purpose: "reset-password" });
+
+  const { otp, hashedOTP } = generateOTP();
+
+  await OTP.create({
+    otp: hashedOTP,
+    userId: user._id,
+    purpose: "reset-password",
+  });
+
+  await emailService.sendPasswordResetEmail(email.toLowerCase(), otp);
+
+  return {
+    message: "Password reset OTP has been sent to your email",
+  };
+};
+
+const resetPasswordService = async (email, otp, newPassword) => {
+  const normalizedEmail = email.toLowerCase();
+
+  const user = await User.findOne({
+    email: normalizedEmail,
+  }).select("+password");
+
+  if (!user) {
+    throw new AppError("User not found", 404);
+  }
+
+  const otpRecord = await OTP.findOne({
+    userId: user._id,
+    purpose: "reset-password",
+  }).select("+otp");
+
+  if (!otpRecord) {
+    throw new AppError("OTP not found or expired", 400);
+  }
+
+  const hashedOTP = generateOTP.hashOTP(otp);
+
+  if (otpRecord.otp !== hashedOTP) {
+    otpRecord.attempts += 1;
+
+    if (otpRecord.attempts >= 5) {
+      await OTP.findByIdAndDelete(otpRecord._id);
+
+      throw new AppError("Too many failed attempts. Request a new OTP.", 429);
     }
+
+    await otpRecord.save();
+
+    throw new AppError("Invalid OTP", 400);
   }
 
-  // update user password
-  async updatePassword(user, newPassword) {
-    // prevent password reuse
-    const isSameAsOld = await bcrypt.compare(newPassword, user.password);
-    if (isSameAsOld) {
-      logger.warn("Attempt password reuse", { userId: user._id });
-      throw new AppError(
-        "New password can not be same as the old password",
-        400
-      );
-    }
+  user.password = await hashPassword(newPassword);
 
-    // hash and save the new password
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-    user.password = hashedPassword;
-    await user.save();
-    logger.info("User password updated", { userId: user._id });
-  }
-  // verify user email
-  async verifyUserEmail(userId) {
-    await User.findByIdAndUpdate(userId, { isEmailVerified: true });
-    logger.info("User email verified", { userId });
+  await user.save();
+
+  await OTP.findByIdAndDelete(otpRecord._id);
+
+  await emailService.sendPasswordResetSuccessEmail(
+    normalizedEmail,
+    user.fullName,
+  );
+
+  return true;
+};
+
+// get user profile
+const getMeService = async (userId) => {
+  const user = await User.findById(userId);
+
+  if (!user) {
+    throw new AppError("User not found", 404);
   }
 
-  async saveRefreshToken(userId, refreshToken) {
-    // find user by id
-    const user = await User.findById(userId);
-    // store refresh the token
-    user.refreshToken = refreshToken;
-    // mark user logged in true
-    user.isLoggedIn = true;
-    // save
-    await user.save();
-    logger.info("Refresh token saved", { userId });
-  }
+  return user;
+};
 
-  // clear the refresh token (logout)
-  async clearRefreshToken(userId) {
-    // find the user by id and update
-    await User.findByIdAndUpdate(
-      userId,
-      // clear the refresh token from the DB
-      { refreshToken: null },
-      { runValidators: false }
-    );
-    logger.info("Refresh token cleared", { userId });
-  }
-}
-
-module.exports = new AuthService();
+module.exports = {
+  registerService,
+  verifyEmailService,
+  resendOTPService,
+  loginService,
+  logoutService,
+  forgotPasswordService,
+  resetPasswordService,
+  getMeService,
+};

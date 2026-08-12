@@ -23,12 +23,23 @@ exports.registerSchema = Joi.object({
     "any.required": "Gender is required",
     "string.empty": "Gender cannot be empty",
   }),
+  phoneNumber: Joi.string()
+    .trim()
+    .pattern(/^(?:\+234|0)[789][01]\d{8}$/) // Validates Nigerian format (en-NG)
+    .required()
+    .messages({
+      "string.pattern.base": "Please provide a valid phone number",
+      "any.required": "Please provide your phone number",
+    }),
   password: Joi.string().pattern(passwordPattern).min(8).required().messages({
     "string.pattern.base":
       "Password must be at least 8 characters and include uppercase, lowercase, number, and special character",
     "any.required": "Password is required",
     "string.empty": "Password cannot be empty",
   }),
+
+  isVerified: Joi.boolean().default(false),
+
   confirmPassword: Joi.string().valid(Joi.ref("password")).required().messages({
     "any.only": "Passwords do not match",
     "any.required": "Please confirm your password",

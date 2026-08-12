@@ -1,6 +1,5 @@
 const express = require("express");
-const router = express.Router();
-const validate = require("../middleware/validate");
+
 const {
   registerSchema,
   loginSchema,
@@ -9,14 +8,20 @@ const {
   requestPasswordResetSchema,
   passwordResetSchema,
 } = require("../validation/authValidation");
+
+const validate = require("../middleware/validate");
 const authController = require("../controller/authController");
 
 const { loginLimiter, otpLimiter } = require("../middleware/rateLimiting");
 
-// sign up
+const router = express.Router();
+
+// ==================== AUTH ====================
+
+// Register
 router.post("/register", validate(registerSchema), authController.register);
 
-// login
+// Login
 router.post(
   "/login",
   loginLimiter,
@@ -24,29 +29,33 @@ router.post(
   authController.login,
 );
 
-// verify OTP
+// Verify email OTP
 router.post(
   "/verify-otp",
   otpLimiter,
   validate(otpSchema),
-  authController.verifyOtp,
+  authController.verifyEmail,
 );
 
-// resend OTP
+// Resend email OTP
 router.post(
   "/resend-otp",
   otpLimiter,
   validate(resendOtpSchema),
-  authController.resentOtp,
+  authController.resendOTP,
 );
 
-// ==== PASSWORD RESET ====
+// ==================== PASSWORD RESET ====================
+
+// Request password reset
 router.post(
   "/request-password-reset",
   otpLimiter,
   validate(requestPasswordResetSchema),
-  authController.requestPasswordReset,
+  authController.forgotPassword,
 );
+
+// Reset password
 router.post(
   "/reset-password",
   validate(passwordResetSchema),

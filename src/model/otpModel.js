@@ -6,12 +6,12 @@ const otpSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
-      index: true,
     },
 
     otp: {
       type: String,
       required: true,
+      select: false,
     },
 
     purpose: {
@@ -23,13 +23,6 @@ const otpSchema = new mongoose.Schema(
     attempts: {
       type: Number,
       default: 0,
-      min: 0,
-    },
-
-    expiresAt: {
-      type: Date,
-      required: true,
-      default: () => new Date(Date.now() + 60 * 60 * 1000),
     },
   },
   {
@@ -37,7 +30,6 @@ const otpSchema = new mongoose.Schema(
   },
 );
 
-// Automatically delete expired OTPs
-otpSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
+const OTP = mongoose.model("OTP", otpSchema);
 
-module.exports = mongoose.model("Otp", otpSchema);
+module.exports = OTP;

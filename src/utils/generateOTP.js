@@ -1,14 +1,18 @@
-const crypto = require("crypto");
+const crypto = require("node:crypto");
 
-function generateSecureOTP(length = 6) {
-  const chars = "abcdefghijklmnopqrstuvwxyz123456789";
-  let otp = "";
-  const bytes = crypto.randomBytes(length);
-  for (let i = 0; i < length; i++) {
-    const index = bytes[i] % chars.length;
-    otp += chars[index];
-  }
-  return otp;
-}
+const hashOTP = (otp) => {
+  return crypto.createHash("sha256").update(otp).digest("hex");
+};
 
-module.exports = generateSecureOTP;
+const generateOTP = () => {
+  const otp = crypto.randomInt(100000, 1000000).toString();
+
+  return {
+    otp,
+    hashedOTP: hashOTP(otp),
+  };
+};
+
+generateOTP.hashOTP = hashOTP;
+
+module.exports = generateOTP;
