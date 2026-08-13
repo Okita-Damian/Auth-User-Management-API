@@ -17,17 +17,21 @@ const registerService = async (data) => {
   const normalizedEmail = email.toLowerCase();
 
   // Find user by email or phone number
-  const user = await User.findOne({
-    $or: [{ email: normalizedEmail }, { phoneNumber }],
-  });
+ const existingEmail = await User.findOne({
+  email: normalizedEmail,
+});
 
-  if (user) {
-    if (user.email === normalizedEmail) {
-      throw new AppError("Email already exists", 400);
-    }
+if (existingEmail) {
+  throw new AppError("Email already exists", 400);
+}
 
-    throw new AppError("Phone number already exists", 400);
-  }
+const existingPhone = await User.findOne({
+  phoneNumber,
+});
+
+if (existingPhone) {
+  throw new AppError("Phone number already exists", 400);
+}
 
   // Hash password
   const hashedPassword = await hashPassword(password);
