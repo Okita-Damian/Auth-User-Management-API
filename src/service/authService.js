@@ -12,26 +12,18 @@ const logger = require("../utils/logger");
 
 // Register a user
 const registerService = async (data) => {
-  const { fullName, email, password, phoneNumber, gender } = data;
+  const { fullName, email, password, gender } = data;
 
   const normalizedEmail = email.toLowerCase();
 
   // Find user by email or phone number
- const existingEmail = await User.findOne({
-  email: normalizedEmail,
-});
+  const existingEmail = await User.findOne({
+    email: normalizedEmail,
+  });
 
-if (existingEmail) {
-  throw new AppError("Email already exists", 400);
-}
-
-const existingPhone = await User.findOne({
-  phoneNumber,
-});
-
-if (existingPhone) {
-  throw new AppError("Phone number already exists", 400);
-}
+  if (existingEmail) {
+    throw new AppError("Email already exists", 400);
+  }
 
   // Hash password
   const hashedPassword = await hashPassword(password);
@@ -42,7 +34,6 @@ if (existingPhone) {
     password: hashedPassword,
     gender,
     email: normalizedEmail,
-    phoneNumber,
     isVerified: false,
   });
 
