@@ -28,7 +28,6 @@ const userSchema = new mongoose.Schema(
 
     phoneNumber: {
       type: String,
-      required: [false, "Please provide your phone number"],
       trim: true,
       unique: true,
       validate: {
