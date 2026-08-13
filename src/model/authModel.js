@@ -3,7 +3,7 @@ const validator = require("validator");
 
 const userSchema = new mongoose.Schema(
   {
-    fullname: {
+    fullName: {
       type: String,
       require: true,
       trim: true,

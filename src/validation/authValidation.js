@@ -5,7 +5,7 @@ const passwordPattern =
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 exports.registerSchema = Joi.object({
-  fullname: Joi.string().required().messages({
+  fullName: Joi.string().required().messages({
     "any.required": "Please type a Name",
     "string.empty": "Name can't be empty",
   }),
@@ -30,8 +30,6 @@ exports.registerSchema = Joi.object({
     "any.required": "Password is required",
     "string.empty": "Password cannot be empty",
   }),
-
-  isVerified: Joi.boolean().default(false),
 
   confirmPassword: Joi.string().valid(Joi.ref("password")).required().messages({
     "any.only": "Passwords do not match",
